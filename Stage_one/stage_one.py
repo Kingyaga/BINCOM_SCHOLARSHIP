@@ -29,10 +29,10 @@ def get_info():
     track = "Unknown"
 
   # Get the GitHub URL of the file being run.
-  file_github_url = "https://github.com/<username>/<repo>/blob/<branch>/<file>"
+  file_github_url = "https://github.com/Kingyaga/HNG-X_BACKEND_TASKS/blob/main/Stage_one/stage_one.py"
 
   # Get the GitHub URL of the full source code.
-  full_source_code_github_url = "https://github.com/<username>/<repo>"
+  full_source_code_github_url = "https://github.com/Kingyaga/HNG-X_BACKEND_TASKS"
 
   # Create a JSON object that contains the information you need to return.
   info = {
