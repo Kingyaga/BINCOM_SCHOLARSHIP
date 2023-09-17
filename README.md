@@ -1,2 +1,2 @@
-# HNG-X_BACKEND_TASKS
-This repository contains all tasks and solutions from the HNG virtual internship program
+# BINCOM_SCHOLARSHIP
+This repository contains all tasks and solutions from the BINCOM python scholarship program
