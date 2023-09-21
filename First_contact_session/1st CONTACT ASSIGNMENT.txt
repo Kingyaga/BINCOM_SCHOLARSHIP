@@ -1,0 +1,19 @@
+ALL NECEESARRY PACKAGES INSTALLED:
+
+psycopg2,
+
+mysqldb,
+
+urllib,
+
+urllib2,
+
+urllib3,
+
+scipy,
+
+numpy,
+
+pandas,
+
+matplotlib
