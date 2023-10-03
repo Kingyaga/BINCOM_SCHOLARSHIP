@@ -10,11 +10,11 @@ def connect_to_database():
         connection: A database connection object.
     """
     connection = psycopg2.connect(
-        database="postgres",
-        user="postgres",
-        password="monstory",
-        host="localhost",
-        port="5432"
+        database="insert",
+        user="insert",
+        password="insert",
+        host="insert",
+        port="insert"
     )
     return connection
 
