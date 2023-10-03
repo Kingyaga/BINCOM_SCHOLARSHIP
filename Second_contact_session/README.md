@@ -6,3 +6,6 @@ Using the library os, print your local file path on screen.
 (file_path.py)
 Extraction of baby name from file using regex not using built-in libraries, create a sort algorithm, implement binary search.
 (baby.html, extract.py, baby.txt, algo.py, binary.py)
+
+GITHUB LINK:
+https://github.com/Kingyaga/BINCOM_SCHOLARSHIP
