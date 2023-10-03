@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./Second_contact_session"
+    ]
+}
