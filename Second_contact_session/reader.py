@@ -5,10 +5,8 @@ def main():
     file_path = "Fullname.txt"
     # Regex pattern
     pattern = r"^(?P<name_type>\w+)\s*:\s*(?P<name>\w+)$"
-    # Turn off advanced search
-    advanced = False
-    # Extract name from file 
-    names = search(file_path, pattern, advanced)
+    # Extract name from file and turn off advanced search
+    names = search(file_path, pattern, advanced=False)
     # Unpack names from the list
     (first_name, middle_name, last_name) = names[:3]
     # Print the first, middle, and last names.
