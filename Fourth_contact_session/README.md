@@ -8,5 +8,7 @@ output.csv: this file contains the converted csv data.
 /visuals: this directory is where the visual representations of the analysis are stored.
 ///
 
+// Leemao I die say i no wetin this thing dey calculate. It's the code that matters sha//
+
 GITHUB LINK:
 https://github.com/Kingyaga/BINCOM_SCHOLARSHIP

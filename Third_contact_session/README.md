@@ -8,5 +8,9 @@ Create a Postgres database with tables and perform crud operations.//done//
 save babynames (extracted previously with regex) to postgres table. 
 (baby.py)
 
+
+//tt.py: todo list class still under development
+
+
 GITHUB LINK:
 https://github.com/Kingyaga/BINCOM_SCHOLARSHIP
