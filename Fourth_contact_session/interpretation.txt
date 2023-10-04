@@ -1,0 +1,7 @@
+Interpretation:
+
+An Mean absolute error(MAE) of $11,463.14 suggests that, on average, the model's predictions are fairly close to the actual prices, but there is still room for improvement.
+
+The Mean squared error(MSE) of approximately $256,524,986.52 indicates that the model has some predictions with large errors. Lowering this value would lead to more accurate predictions.
+
+An R-squared of 0.62 suggests that the model captures a significant portion of the price variance. However, there is still some unexplained variability (38%), which could be due to missing variables or inherent randomness in house prices.
