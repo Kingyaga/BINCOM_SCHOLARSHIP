@@ -30,6 +30,7 @@ def create_tasks_table(connection):
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS tasks (
             task_id SERIAL PRIMARY KEY,
+            task_no SERIAL,
             description TEXT,
             completed BOOLEAN 
         )
@@ -52,42 +53,42 @@ def add_task(connection, description):
     cursor.close()
 
 # Function to remove one or more tasks from the database by task ID(s)
-def remove_task(connection, task_id):
+def remove_task(connection, task_no):
     """
-    Removes one or more tasks from the 'tasks' table in the database by task ID(s).
+    Removes one or more tasks from the 'tasks' table in the database by task no.(s).
 
     Args:
         connection: A database connection object.
-        task_id: A single task ID or a comma-separated string of task IDs to be removed.
+        task_id: A single task no or a comma-separated string of task no.s to be removed.
     """
     cursor = connection.cursor()
-    task_list = task_id.split(',')
+    task_list = task_no.split(',')
     # Delete the task(s)
     for task in task_list:
         if task.isdigit():
-            cursor.execute("DELETE FROM tasks WHERE task_id = %s", (task,))
-    # After deletion, update the task IDs to fill any gaps
-    cursor.execute("SELECT task_id FROM tasks ORDER BY task_id")
-    current_task_ids = [row[0] for row in cursor.fetchall()]
-    for i, current_id in enumerate(current_task_ids, start=1):
-        if current_id != i:
-            cursor.execute("UPDATE tasks SET task_id = %s WHERE task_id = %s", (i, current_id))
-    # Reset the task_id sequence based on the existing tasks
-    reset_task_id_sequence(connection)
+            cursor.execute("DELETE FROM tasks WHERE task_no = %s", (task,))
+    # After deletion, update the task no.s to fill any gaps
+    cursor.execute("SELECT task_no FROM tasks ORDER BY task_no")
+    current_task_nos = [row[0] for row in cursor.fetchall()]
+    for i, current_no in enumerate(current_task_nos, start=1):
+        if current_no != i:
+            cursor.execute("UPDATE tasks SET task_no = %s WHERE task_no = %s", (i, current_no))
+    # Reset the task_no sequence based on the existing tasks
+    reset_task_no_sequence(connection)
     connection.commit()
     cursor.close()
 
-# Function to reset the task_id sequence based on the existing tasks
-def reset_task_id_sequence(connection):
+# Function to reset the task_no sequence based on the existing tasks
+def reset_task_no_sequence(connection):
     """
-    Resets the task_id sequence in the 'tasks' table based on the existing tasks.
+    Resets the task_no sequence in the 'tasks' table based on the existing tasks.
 
     Args:
         connection: A database connection object.
     """
     cursor = connection.cursor()
     cursor.execute("""
-        SELECT setval('tasks_task_id_seq', (SELECT MAX(task_id) FROM tasks));
+        SELECT setval('tasks_task_no_seq', (SELECT MAX(task_no) FROM tasks));
     """)
     connection.commit()
     cursor.close()
@@ -111,22 +112,22 @@ def get_all_tasks(connection, val=None):
     select = options.get(val)
     # Retrieve specified tasks
     if select is not None:
-        cursor.execute("SELECT * FROM tasks WHERE completed = %s ORDER BY task_id", (select,))
+        cursor.execute("SELECT * FROM tasks WHERE completed = %s ORDER BY task_no", (select,))
     else:
         # Retrieve all tasks
-        cursor.execute("SELECT * FROM tasks ORDER BY task_id")
+        cursor.execute("SELECT task_no, description, completed FROM tasks ORDER BY task_no")
     tasks = cursor.fetchall()
     cursor.close()
     return tasks
 
 # Function to update the description and/or completed columns of an existing task
-def update_task(connection, task_id, new_description=None, new_completed=None):
+def update_task(connection, task_no, new_description=None, new_completed=None):
     """
     Updates the description and/or completed columns of an existing task in the 'tasks' table.
 
     Args:
         connection: A database connection object.
-        task_id: The ID of the task to be updated.
+        task_no: The no. of the task to be updated.
         new_description: The new description for the task (optional).
         new_completed: The new completion status for the task (optional).
     """
@@ -143,8 +144,8 @@ def update_task(connection, task_id, new_description=None, new_completed=None):
         update_values.append(new_completed)
 
     # Remove the trailing comma and add the WHERE clause
-    update_query = update_query.rstrip(',') + " WHERE task_id = %s"
-    update_values.append(task_id)
+    update_query = update_query.rstrip(',') + " WHERE task_no = %s"
+    update_values.append(task_no)
 
     cursor.execute(update_query, tuple(update_values))
     connection.commit()
@@ -161,13 +162,13 @@ def edit(connection, val):
     """
     # Display all tasks
     task_display(connection)
-    # Prompt the user to enter the ID of the task to be edited
-    task_id = input("Enter task ID: ")
+    # Prompt the user to enter the no. of the task to be edited
+    task_no = input("Enter task number: ")
     if val == 1:
         new_description = input("Enter new task description: ")
         # Prompt user to save changes
         if input("Press 1 to save changes: ") == "1":
-            update_task(connection, task_id, new_description)
+            update_task(connection, task_no, new_description)
         else:
             print("Changes discarded!")
     else:
@@ -178,7 +179,7 @@ def edit(connection, val):
         new_completed = mark.get(user_input)
         # Prompt user to save changes
         if input("Press 1 to save changes: ") == "1" and new_completed is not None:
-            update_task(connection, task_id, new_completed=new_completed)
+            update_task(connection, task_no, new_completed=new_completed)
         else:
             print("Changes discarded!")
 
@@ -199,7 +200,7 @@ def task_display(connection, val=None):
         # Create a table
         table = PrettyTable()
         # Add columns to the table
-        table.field_names = ["Task ID", "Task", "Completed"]
+        table.field_names = ["Task Number", "Task", "Completed"]
         for task in tasks:
             # Add a row to the table
             table.add_row(task)
@@ -239,8 +240,8 @@ def main():
         elif choice == "2":
             # Retrieve and display all tasks from the database
             task_display(connection)
-            # Prompt the user to enter the task ID(s) they want to remove and remove the task(s) from the database
-            remove_task(connection, input("Enter task ID(s) to remove (comma-separated): ").replace(" ", ""))
+            # Prompt the user to enter the task no.(s) they want to remove and remove the task(s) from the database
+            remove_task(connection, input("Enter task number(s) to remove (comma-separated): ").replace(" ", ""))
         elif choice == "3":
             # Retrieve and display tasks from the database
             task_display(connection, input(f"{view}Enter your choice: ").replace(" ", ""))

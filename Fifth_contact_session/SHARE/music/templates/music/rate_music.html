@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Rate Music - {{ music.title }}</h2>
+    <p>Current Average Rating: {{ music.average_rating }}</p>
+    <form action="{% url 'music:rateMusic' %}" method="post">
+        {% csrf_token %}
+        <label for="rating">Your Rating (1-5):</label>
+        <input type="number" name="rating" min="1" max="5" required>
+        <button type="submit">Submit Rating</button>
+    </form>
+{% endblock %}

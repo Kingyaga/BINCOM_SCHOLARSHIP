@@ -1,0 +1,190 @@
+Pidgin English Language is commonly spoken in Junior Secondary Schools in Obio/Akpor Local Government Area.  
+' HE' - Count: 96, Percentage: 45.71%
+' VLE' - Count: 56, Percentage: 26.67%
+' VHE' - Count: 14, Percentage: 6.67%
+' LE' - Count: 44, Percentage: 20.95%
+Pidgin English Language is being used in educational settings by students and teachers in Junior Secondary Schools.  
+' HE' - Count: 85, Percentage: 40.48%
+' LE' - Count: 50, Percentage: 23.81%
+' VLE' - Count: 64, Percentage: 30.48%
+' VHE' - Count: 11, Percentage: 5.24%
+The primary reason for using Pidgin English Language in teaching and learning in Junior Secondary Schools by students and teachers is for facilitating faster and easier communication.  
+' LE' - Count: 44, Percentage: 20.95%
+' VLE' - Count: 63, Percentage: 30.00%
+' VHE' - Count: 13, Percentage: 6.19%
+' HE' - Count: 90, Percentage: 42.86%
+Pidgin English Language is currently being used in the classroom to what extent?  
+' VLE' - Count: 51, Percentage: 24.29%
+' HE' - Count: 97, Percentage: 46.19%
+' LE' - Count: 50, Percentage: 23.81%
+' VHE' - Count: 12, Percentage: 5.71%
+There are challenges or drawbacks associated with using Pidgin English Language in educational settings.  
+' HE' - Count: 91, Percentage: 43.33%
+' LE' - Count: 57, Percentage: 27.14%
+' VHE' - Count: 7, Percentage: 3.33%
+' VLE' - Count: 55, Percentage: 26.19%
+There are specific subjects or areas where Pidgin English Language could be more effectively used in teaching and learning.  
+' VHE' - Count: 13, Percentage: 6.19%
+' HE' - Count: 87, Percentage: 41.43%
+' LE' - Count: 53, Percentage: 25.24%
+' VLE' - Count: 57, Percentage: 27.14%
+There are some cultural considerations that should be taken into account when using Pidgin English Language in educational settings.  
+' VLE' - Count: 49, Percentage: 23.33%
+' HE' - Count: 94, Percentage: 44.76%
+' LE' - Count: 55, Percentage: 26.19%
+' VHE' - Count: 12, Percentage: 5.71%
+Some steps should be taken to further include Pidgin English Language usage into teaching and learning practices.  
+' HE' - Count: 85, Percentage: 40.48%
+' VLE' - Count: 61, Percentage: 29.05%
+' LE' - Count: 56, Percentage: 26.67%
+' VHE' - Count: 8, Percentage: 3.81%
+Students and teachers are familiar with the concept of Pidgin English Language.  
+' A' - Count: 95, Percentage: 45.24%
+' SD' - Count: 49, Percentage: 23.33%
+' SA' - Count: 12, Percentage: 5.71%
+' D' - Count: 54, Percentage: 25.71%
+There are potential benefits of including Pidgin English Language in the classroom.  
+' D' - Count: 66, Percentage: 31.43%
+' SD' - Count: 46, Percentage: 21.90%
+' A' - Count: 81, Percentage: 38.57%
+' SA' - Count: 17, Percentage: 8.10%
+The use of Pidgin English Language can compromise students' performance in formal English.  
+' A' - Count: 75, Percentage: 35.71%
+' D' - Count: 62, Percentage: 29.52%
+' SA' - Count: 14, Percentage: 6.67%
+' SD' - Count: 59, Percentage: 28.10%
+It is preferable to use Pidgin English Language for better communication in educational settings.  
+' SD' - Count: 53, Percentage: 25.24%
+' A' - Count: 83, Percentage: 39.52%
+' SA' - Count: 15, Percentage: 7.14%
+' D' - Count: 59, Percentage: 28.10%
+There is an improvement in students' learning outcomes when Pidgin English Language is utilized.  
+' A' - Count: 85, Percentage: 40.48%
+' SD' - Count: 51, Percentage: 24.29%
+' SA' - Count: 21, Percentage: 10.00%
+' D' - Count: 53, Percentage: 25.24%
+With appropriate effort, Pidgin English Language can be effectively integrated into the curriculum.  
+' D' - Count: 56, Percentage: 26.67%
+' SD' - Count: 63, Percentage: 30.00%
+' SA' - Count: 24, Percentage: 11.43%
+' A' - Count: 67, Percentage: 31.90%
+Teachers should receive training on how to effectively use Pidgin English Language in teaching.  
+' D' - Count: 64, Percentage: 30.48%
+' SD' - Count: 49, Percentage: 23.33%
+' SA' - Count: 24, Percentage: 11.43%
+' A' - Count: 73, Percentage: 34.76%
+There's positive impact of Pidgin English Language on teaching and learning.  
+' SA' - Count: 25, Percentage: 11.90%
+' A' - Count: 69, Percentage: 32.86%
+' D' - Count: 67, Percentage: 31.90%
+' SD' - Count: 49, Percentage: 23.33%
+There is serious negative impact of Pidgin English Language on teaching and learning.  
+' A' - Count: 65, Percentage: 30.95%
+' SD' - Count: 50, Percentage: 23.81%
+' D' - Count: 71, Percentage: 33.81%
+' SA' - Count: 24, Percentage: 11.43%
+Junior Secondary School education can progress successfully without the use of Pidgin English Language during teaching and learning.  
+' A' - Count: 73, Percentage: 34.76%
+' SD' - Count: 54, Percentage: 25.71%
+' D' - Count: 63, Percentage: 30.00%
+' SA' - Count: 20, Percentage: 9.52%
+The use of Pidgin English Language facilitates teaching and learning.  
+' A' - Count: 59, Percentage: 28.10%
+' D' - Count: 76, Percentage: 36.19%
+' SA' - Count: 25, Percentage: 11.90%
+' SD' - Count: 50, Percentage: 23.81%
+You have personally experienced some positive effects of using Pidgin English Language in your education or teaching practices.  
+' A' - Count: 71, Percentage: 33.81%
+' SD' - Count: 48, Percentage: 22.86%
+' D' - Count: 67, Percentage: 31.90%
+' SA' - Count: 24, Percentage: 11.43%
+Pidgin English Language should be included as a legitimate language of instruction.  
+' A' - Count: 78, Percentage: 37.14%
+' SD' - Count: 37, Percentage: 17.62%
+' SA' - Count: 33, Percentage: 15.71%
+' D' - Count: 62, Percentage: 29.52%
+The use of Pidgin English Language affects students' motivation to learn positively.  
+' D' - Count: 62, Percentage: 29.52%
+' SD' - Count: 33, Percentage: 15.71%
+' A' - Count: 84, Percentage: 40.00%
+' SA' - Count: 31, Percentage: 14.76%
+Some strategies can be carried out by educators to effectively include Pidgin English Language without compromising standard language proficiency.  
+' A' - Count: 68, Percentage: 32.38%
+' SD' - Count: 46, Percentage: 21.90%
+' SA' - Count: 26, Percentage: 12.38%
+' D' - Count: 70, Percentage: 33.33%
+The use of Pidgin English Language during instruction fosters successful communication.  
+' SA' - Count: 38, Percentage: 18.10%
+' SD' - Count: 47, Percentage: 22.38%
+' D' - Count: 67, Percentage: 31.90%
+' A' - Count: 58, Percentage: 27.62%
+Utilization of Pidgin English Language by the teachers and students helps to form a bond and establish closeness between them.  
+' SA' - Count: 30, Percentage: 14.29%
+' SD' - Count: 44, Percentage: 20.95%
+' D' - Count: 59, Percentage: 28.10%
+' A' - Count: 77, Percentage: 36.67%
+Pidgin English Language is mostly used for instruction because it helps for clarification of difficult concepts.  
+' SA' - Count: 36, Percentage: 17.14%
+' D' - Count: 67, Percentage: 31.90%
+' A' - Count: 71, Percentage: 33.81%
+' SD' - Count: 36, Percentage: 17.14%
+The teachers and students engage in more friendly conversations when using the Pidgin English Language during instruction.  
+' SA' - Count: 37, Percentage: 17.62%
+' A' - Count: 71, Percentage: 33.81%
+' D' - Count: 62, Percentage: 29.52%
+' SD' - Count: 40, Percentage: 19.05%
+You have personally benefitted from the use of Pidgin English Language during instruction.  
+' A' - Count: 71, Percentage: 33.81%
+' D' - Count: 64, Percentage: 30.48%
+' SA' - Count: 41, Percentage: 19.52%
+' SD' - Count: 34, Percentage: 16.19%
+Pidgin English Language hinders students' proficiency in standard English.  
+' A' - Count: 86, Percentage: 40.95%
+' SA' - Count: 32, Percentage: 15.24%
+' D' - Count: 68, Percentage: 32.38%
+' SD' - Count: 24, Percentage: 11.43%
+Pidgin English Language leads to poor communication skills among students.  
+' SA' - Count: 32, Percentage: 15.24%
+' A' - Count: 83, Percentage: 39.52%
+' SD' - Count: 34, Percentage: 16.19%
+' D' - Count: 61, Percentage: 29.05%
+The use of Pidgin English Language negatively impacts students' ability to perform effectively in other subjects.  
+' SA' - Count: 42, Percentage: 20.00%
+' D' - Count: 60, Percentage: 28.57%
+' A' - Count: 81, Percentage: 38.57%
+' SD' - Count: 27, Percentage: 12.86%
+Teachers find it challenging to change from Pidgin English Language to standard English during instruction.  
+' SA' - Count: 51, Percentage: 24.29%
+' A' - Count: 69, Percentage: 32.86%
+' SD' - Count: 33, Percentage: 15.71%
+' D' - Count: 57, Percentage: 27.14%
+Pidgin English Language affects students' overall performance, especially in English language exams or assessments.  
+' SA' - Count: 45, Percentage: 21.43%
+' A' - Count: 79, Percentage: 37.62%
+' D' - Count: 65, Percentage: 30.95%
+' SD' - Count: 21, Percentage: 10.00%
+Pidgin English Language creates a barrier to understanding and comprehending complex academic concepts.  
+' A' - Count: 88, Percentage: 41.90%
+' SA' - Count: 39, Percentage: 18.57%
+' D' - Count: 67, Percentage: 31.90%
+' SD' - Count: 16, Percentage: 7.62%
+Pidgin English Language creates language inequalities and thereby, causes social divisions in education.  
+' A' - Count: 83, Percentage: 39.52%
+' SA' - Count: 37, Percentage: 17.62%
+' D' - Count: 73, Percentage: 34.76%
+' SD' - Count: 17, Percentage: 8.10%
+Teachers face challenges when students use Pidgin English Language in the classroom.  
+' SA' - Count: 58, Percentage: 27.62%
+' D' - Count: 65, Percentage: 30.95%
+' A' - Count: 72, Percentage: 34.29%
+' SD' - Count: 15, Percentage: 7.14%
+You have experienced a situation where Pidgin English Language negatively impacted teaching or learning outcomes.  
+' A' - Count: 77, Percentage: 36.67%
+' D' - Count: 59, Percentage: 28.10%
+' SA' - Count: 50, Percentage: 23.81%
+' SD' - Count: 24, Percentage: 11.43%
+Attempts have been made to address the negative effects of Pidgin English Language on teaching and learning in your educational context.  
+' A' - Count: 91, Percentage: 43.33%
+' SA' - Count: 41, Percentage: 19.52%
+' D' - Count: 69, Percentage: 32.86%
+' SD' - Count: 9, Percentage: 4.29%

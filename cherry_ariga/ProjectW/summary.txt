@@ -1,0 +1,110 @@
+The introduction provides the context and rationale for the study, highlighting the use of Pidgin English in Nigeria and its potential effects on teaching and learning in junior secondary schools in Obio/Akpor LGA, Rivers State. It introduces the primary aim and objectives of the study, along with the research questions and hypotheses.
+
+Background to the Study:
+
+Pidgin English is a widely used means of communication in Nigeria.
+It has both positive (better communication) and negative effects (lack of elocutionary skills) on its speakers, especially scholars.
+The study aims to explore the effects of Pidgin English on the educational process in junior secondary schools in Obio/Akpor LGA.
+Definition of Pidgin English:
+
+Various definitions of Pidgin English are presented, emphasizing its use as a simplified form of a language used for communication in multilingual settings.
+Historical Context of Pidgin English in Nigeria:
+
+The history and origin of Pidgin English in Nigeria are explained, including its development as a lingua franca for trade during the 17th century.
+Pidgin English remains widely spoken in Nigeria, even more so than English.
+Current Status of Pidgin English:
+
+Pidgin English is spoken by both literate and illiterate individuals in Nigeria.
+It is mainly used in informal situations, while English is used for formal and educational purposes.
+Statement of the Problem:
+
+Pidgin English may be used in teaching junior secondary school students in Obio/Akpor LGA, possibly due to the need to simplify concepts, teacher preferences, a lack of qualified staff, or a lack of educational oversight.
+The study aims to identify and bring attention to the positive and negative effects of Pidgin English on teaching and learning in these schools.
+Aim and Objectives:
+
+The main aim is to highlight the effects of Pidgin English on teaching and learning in junior secondary schools in Obio/Akpor LGA.
+Specific objectives include identifying the extent of Pidgin English usage, perceptions of students and teachers, and both positive and negative effects.
+Research Questions:
+
+Four research questions are provided, focusing on the extent of Pidgin English usage, perceptions, positive effects, and negative effects.
+Hypotheses:
+
+Four hypotheses are presented, including hypotheses related to the extent of Pidgin English usage, perceptions, positive effects, and negative effects.
+Significance of the Study:
+
+The study is significant for students, teachers, school administration, and future researchers. It will help students understand the limitations of using Pidgin English in certain contexts and its benefits in others.
+Teachers will be encouraged to teach in proper English while having the flexibility to use Pidgin English when necessary.
+School administration will benefit from insights into why students may fail exams and how to improve students' understanding of standard English-language questions.
+Future researchers can use this study as a reference for related topics.
+Scope of the Study:
+
+The study examines the effects of Pidgin English on teaching and learning, using mean, standard deviation, and regression for data analysis.
+A self-structured questionnaire is used to gather data from a specified number of students and teachers.
+In summary, the introduction sets the stage for the study, explaining the relevance and objectives of investigating the effects of Pidgin English on teaching and learning in junior secondary schools in the specified region. It also introduces key definitions and historical context, framing the research questions and hypotheses.
+
+
+The Literature Review chapter provides an in-depth exploration of concepts, theories, and related literature that are pertinent to the research project. It covers the following subheadings:
+
+2.1 Conceptual Framework:
+
+This section addresses various concepts related to the research project, including:
+Pidgin English Language
+Pidgin English Language in Nigeria
+The positive effects of Pidgin English Language on teaching and learning
+The negative effects of Pidgin English Language on teaching and learning
+Factors that facilitate the positive effects of Pidgin English Language on teaching and learning
+Factors that facilitate the negative effects of Pidgin English Language on teaching and learning
+2.2 Theoretical Framework:
+
+This part discusses theories that support the knowledge related to the research, such as:
+Code-meshing
+Code-switching
+Theory of Diglossia
+2.3 Empirical Review:
+
+The chapter reviews studies of related empirical research projects conducted in the same area. Several studies are mentioned:
+
+Onyejelem and Onyejelem (2020) focused on "The influence of Pidgin English on educational outcomes among secondary school students in Nigeria." The research highlighted the negative effects of Pidgin English Language on students' oral English skills and their performance in the West African Senior School Certificate Examination.
+Persis Adu-Boahen (2020) examined "The effects of Pidgin English on students' academic performance in English Language" at Adventist Senior High School, Bantama-Kumasi. The study found that students often preferred Pidgin language during casual conversations, which led to teachers advocating for fines when students used Pidgin English during speeches.
+Obisike, Nwala, and Mbong (2019) investigated "The impact of Pidgin English on the effective learning of English Language among Junior Secondary School students in Port Harcourt." The study revealed challenges related to phonology and the usage of specific morphemes among students.
+Leslie Acheson Wey (2019) explored "Does Using Local Pidgin Effect the Outcome of English Learning? The Case of Nigerian Students." The study indicated a significant relationship between Nigerian Pidgin and students' performance in English studies.
+Myschool.ng (2013) released a research project on "The negative effects of Pidgin English in the university." The findings suggested that students commonly used Nigerian Pidgin, and it was viewed as having a place in university communication.
+2.4 Summary of Literature Review:
+
+This section provides a summary of the literature review, emphasizing that the study aims to investigate the effects of Pidgin English Language on teaching and learning in junior secondary schools in Obio/Akpor LGA, Rivers State, and that relevant literature and theories have been reviewed to support this research.
+In essence, the Literature Review chapter gives a comprehensive overview of the research's context, covering the concepts, theories, and previous research that informs the study's objectives and hypotheses. It sets the stage for the empirical research that will follow.
+
+
+The "Methodology" chapter outlines the research procedures and methods used in the study and is divided into several sub-headings:
+
+3.1 Research Design:
+
+The study utilized a descriptive survey design, which aims to systematically and accurately describe a population, situation, or phenomenon. It is well-suited to answering "what, where, when, and how" questions and can employ a variety of research methods to investigate one or more variables.
+3.2 Area of the Study:
+
+The research focused on Junior Secondary Schools in Obio/Akpor Local Government Area of Rivers State, Nigeria.
+3.3 Population of the Study:
+
+The accessible population for the study comprised 200 students and 10 teachers from selected Public Junior Secondary Schools in Obio/Akpor Local Government Area.
+3.4 Sample and Sampling Techniques:
+
+The researchers selected Obio/Akpor Local Government Area due to its proximity to the researcher's residence and used convenience sampling for data collection. The sample size included 210 respondents, determined through simple random sampling from the selected schools.
+3.5 Instrument for Data Collection:
+
+The data collection instrument was a self-structured questionnaire named "Questionnaire on Effects of Pidgin English Language on teaching and learning in Junior Secondary Schools in Obio/Akpor LGA of Rivers State" (QEPELTLOLGARS). It consisted of a 38-item, four-option multiple choice objective test and was designed using a modified Likert scale.
+3.6 Validity of the Instrument:
+
+The research instrument underwent face and content validity assessment by the researcher's supervisor and two experts from the Department of Measurement and Evaluation at the University of Port Harcourt. Their input aimed to determine the suitability of the instrument for assessing the effects of Pidgin English Language on teaching and learning.
+3.7 Reliability of the Instrument:
+
+The internal consistency reliability of the test was assessed by the researcher using Cronbach's alpha coefficient to determine the instrument's reliability.
+3.8 Method of Data Collection:
+
+The data collection process began with a self-structured letter of introduction that granted the researcher access to respondents. A self-structured questionnaire was administered directly by the researcher and research assistants to the 210 respondents. The data collection process involved the collaboration of teachers and school management.
+3.9 Method of Data Analysis:
+
+Data analysis included both descriptive and inferential statistics. Descriptive statistics, such as averages (means) and standard deviations, were used to answer research questions. Inferential statistics involved the use of an analytical regression model to test hypotheses and establish causal-effect relationships between dependent and independent variables.
+3.9.1 Analytical Regression Model:
+
+The research employed an analytical regression model, which consisted of a general linear equation to establish causal-effect relationships. The model included variables such as Effects on teaching and learning (EPER), Pidgin English (PDE), a constant term (α), and a standard error term (SE). This model aimed to demonstrate how the usage of Pidgin English affected teaching and learning, and it showed that the effects of Pidgin English on teaching and learning were inversely proportional to its usage. In simpler terms, when the effects of Pidgin English on teaching and learning were minimal or non-existent, the usage of Pidgin English by teachers and students was also reduced.
+In summary, the "Methodology" chapter provides a comprehensive overview of the research design, data collection procedures, and statistical methods used in the study to investigate the effects of Pidgin English Language on teaching and learning in Junior Secondary Schools in Obio/Akpor LGA of Rivers State.

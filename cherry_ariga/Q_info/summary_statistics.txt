@@ -1,0 +1,6 @@
+Summary Statistics:
+Mean PDE (Average): 2.27
+Std Dev PDE (Average): 0.51
+Mean EPER (Average): 2.48
+Std Dev EPER (Average): 0.41
+Correlation between PDE (Average) and EPER (Average): 0.19

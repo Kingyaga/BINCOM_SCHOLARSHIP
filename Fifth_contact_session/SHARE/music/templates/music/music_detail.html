@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ music.title }}</h2>
+    <audio controls>
+        <source src="{{ music.file.url }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <h3>Lyrics</h3>
+    <pre>{{ music.lyrics }}</pre>
+
+    <h3>Ratings</h3>
+    <p>Average Rating: {{ music.average_rating }}</p>
+    <p>Total Ratings: {{ music.total_ratings }}</p>
+
+    <h4>Your Rating</h4>
+    {% if user_rated %}
+        <p>You rated this: {{ user_rating }}</p>
+    {% else %}
+    <a href="{% url 'music:rateMusic' %}">Rate this song</a>
+    {% endif %}
+{% endblock %}
