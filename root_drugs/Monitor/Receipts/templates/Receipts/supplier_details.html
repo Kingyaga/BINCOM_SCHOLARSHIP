@@ -1,0 +1,20 @@
+{% extends "Receipts/layout.html" %}
+
+{% block title %}
+    Supplier Details
+{% endblock %}
+
+{% block body %}
+    <h1>Supplier Details</h1>
+    <h3>Supplier Name: {{ supplier.supplier_name }}</h3>
+    <p>Contact Information: {{ supplier.contact_info }}</p>
+    <h1>Select a Receipt</h1>
+    <form method="GET" action="{% url 'Receipts:receipt' supplier_id=supplier_id %}">
+        <select name="supply_date">
+            {% for supply_date in supplier_supplies %}
+                <option value="{{ supply_date }}">{{ supply_date }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Show Details</button>
+    </form>
+{% endblock %}

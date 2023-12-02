@@ -1,0 +1,17 @@
+{% extends "Receipts/layout.html" %}
+
+{% block title %}
+    App Navigation
+{% endblock %}
+
+{% block body %}
+    <h1>Welcome to Your App</h1>
+    <h2>Navigate to:</h2>
+    <ul>
+        <li><a href="{% url 'Receipts:supplier-list' %}">List of Suppliers</a></li>
+        <li><a href="{% url 'Receipts:search-drug' %}">Search drugs</a></li>
+        <li><a href="{% url 'Receipts:add-supplier' %}">Add Supplier</a></li>
+        <li><a href="{% url 'Receipts:add-drug' %}">Add Drug</a></li>
+        <li><a href="{% url 'Receipts:add-receipt' %}">Save a New Receipt</a></li>
+    </ul>
+{% endblock %}

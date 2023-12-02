@@ -1,0 +1,16 @@
+{% extends "Receipts/layout.html" %}
+
+{% block title %}
+    Supplier List
+{% endblock %}
+
+{% block body %}
+    <h1>List of Suppliers</h1>
+    <ul>
+        {% for supplier in suppliers %}
+            <li><a href="{% url 'Receipts:supplier-details' %}"> {{ supplier.supplier_name }}</a></li>
+        {% empty %}
+            <li>No suppliers found</li>
+        {% endfor %}
+    </ul>
+{% endblock %} 

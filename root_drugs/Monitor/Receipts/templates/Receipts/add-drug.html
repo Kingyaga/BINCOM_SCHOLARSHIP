@@ -1,0 +1,14 @@
+{% extends "Receipts/layout.html" %}
+
+{% block title %}
+    Add Drug
+{% endblock  %}
+
+{% block body %}
+    <h1>Add a New Drug</h1>
+        <form method="POST" action="{% url 'Receipts:add-drug' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+{% endblock %}

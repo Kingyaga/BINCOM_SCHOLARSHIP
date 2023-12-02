@@ -1,0 +1,14 @@
+{% extends "Receipts/layout.html" %}
+
+{% block title %}
+    Add Supplier
+{% endblock  %}
+
+{% block body %}
+    <h1>Add a New Supplier</h1>
+        <form method="POST" action="{% url 'Receipts:add-supplier' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "Receipts/layout.html" %}
+
+{% block title %}
+    Receipt
+{% endblock %}
+
+{% block body %}
+    <h1>{{ supplier.supplier_name }} - {{ supply_date }}</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Drug</th>
+                <th>Quantity Added</th>
+                <th>Former Quantity</th>
+                <th>Cost Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for supply in supplies %}
+                <tr>
+                    <td>{{ supply.drug.drug_name }}</td>
+                    <td>{{ supply.quantity_supplied }}</td>
+                    <td>{{ supply.initial_quantity }}</td>
+                    <td>{{ supply.cost_price }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No drugs supplied on this date</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

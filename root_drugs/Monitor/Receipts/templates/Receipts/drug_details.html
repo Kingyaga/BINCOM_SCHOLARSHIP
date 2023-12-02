@@ -1,0 +1,21 @@
+{% extends "Receipts/layout.html" %}
+
+{% block title %}
+    Drug Details
+{% endblock %}
+
+{% block body %}
+    <h1>Drug Details</h1>
+    <h3>Drug Name: {{ drug.drug_name }}</h3>
+    <h3>Generic Name: {{ drug.generic_name }}</h3>
+    <h2>Receipt History:</h2>
+    <ul>
+        {% for supply in supplies %}
+            <li>
+                <a href="{% url 'Receipts:Receipt_details' supply_id=supply.id %}">{{ supply.supplier.supplier_name }} - {{ supply.supply_date }}</a>
+            </li>
+        {% empty %}
+            <li>No Receipt history available for this drug</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

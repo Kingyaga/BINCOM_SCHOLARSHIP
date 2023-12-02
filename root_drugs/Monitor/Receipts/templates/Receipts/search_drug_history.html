@@ -1,0 +1,13 @@
+{% extends "Receipts/layout.html" %}
+
+{% block title %}
+    Search Drug History
+{% endblock %}
+
+{% block body %}
+    <h1>Search Drug History</h1>
+    <form method="GET" action="{% url 'Receipts:search-drug' %}">
+        <input type="text" name="query" placeholder="Enter drug name or generic name">
+        <button type="submit">Search</button>
+    </form>
+{% endblock %}

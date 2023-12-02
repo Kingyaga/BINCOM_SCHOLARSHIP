@@ -1,0 +1,14 @@
+{% extends "Receipts/layout.html" %}
+
+{% block title %}
+    Receipt Details
+{% endblock %}
+
+{% block body %}
+    <h1>Receipt Details</h1>
+    <h2>Receipt: {{ supply.supplier.supplier_name }} - {{ supply.supply_date }}</h2>
+    <h2>Drug Name: {{ supply.drug.drug_name }}</h2>
+    <p>Cost Price: {{ supply.cost_price }}</p>
+    <p>Quantity Added: {{ supply.quantity_supplied }}</p>
+    <p>Former Quantity: {{ supply.initial_quantity }}</p>
+{% endblock %}
