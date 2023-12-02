@@ -35,7 +35,7 @@ class DrugReceiptForm(forms.ModelForm):
         model = SupplierSupply
         fields = ['drug', 'quantity_added', 'cost_price', 'former_quantity']
         widgets = {
-            'drug': autocomplete.Select(
+            'drug': autocomplete.Select2(
                 url='drug-autocomplete',
                 attrs={'data-minimum-input-length': 2}
             )}
