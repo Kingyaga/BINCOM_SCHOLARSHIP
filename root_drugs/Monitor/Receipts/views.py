@@ -106,7 +106,7 @@ def add_receipt(request):
         'drug_receipt_formset': drug_receipt_formset
     })
 
-class DrugAutocomplete(autocomplete.SelectQuerySetView):
+class DrugAutocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
         qs = Drug.objects.all()
         if self.q:
