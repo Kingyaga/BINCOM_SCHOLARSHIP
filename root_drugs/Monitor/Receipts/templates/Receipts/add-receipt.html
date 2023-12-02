@@ -1,3 +1,4 @@
+{% load static %}
 {% extends "Receipts/layout.html" %}
 
 {% block title %}
@@ -9,15 +10,19 @@
         <form method="POST" action="{% url 'Receipts:add-receipt' %}">
             {% csrf_token %}
             {{ receipt_form.as_p }}
-            <h2>Receipt Details:</h2>
-            {{ drug_receipt_formset.management_form }}
-            <table>
-                {% for form in drug_receipt_formset %}
-                    <tr>
-                        {{ form.as_table }}
-                    </tr>
-                {% endfor %}
-            </table>
+            <div id="drug-details">
+                <h2>Receipt Details:</h2>
+                {{ drug_receipt_formset.management_form }}
+                <table>
+                    {% for form in drug_receipt_formset %}
+                        <tr class="drug-form">
+                            {{ form.as_table }}
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <button type="button" id="add-drug">Add Another Drug</button>
             <button type="submit">Save Receipt</button>
         </form>
+        <script src="{% static 'static/js/add_receipt.js' %}"></script>
 {% endblock %}
