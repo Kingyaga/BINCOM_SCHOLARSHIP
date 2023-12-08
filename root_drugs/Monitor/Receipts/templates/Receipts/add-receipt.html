@@ -10,18 +10,18 @@
         <form method="POST" action="{% url 'Receipts:add-receipt' %}">
             {% csrf_token %}
             {{ receipt_form.as_p }}
-            <div id="drug-details">
+            <div id="product-details">
                 <h2>Receipt Details:</h2>
-                {{ drug_receipt_formset.management_form }}
+                {{ product_receipt_formset.management_form }}
                 <table>
-                    {% for form in drug_receipt_formset %}
-                        <tr class="drug-form">
+                    {% for form in product_receipt_formset %}
+                        <tr class="product-form">
                             {{ form.as_table }}
                         </tr>
                     {% endfor %}
                 </table>
             </div>
-            <button type="button" id="add-drug">Add Another Drug</button>
+            <button type="button" id="add-product">Add Another</button>
             <button type="submit">Save Receipt</button>
         </form>
         <script src="{% static 'js/add_receipt.js' %}"></script>

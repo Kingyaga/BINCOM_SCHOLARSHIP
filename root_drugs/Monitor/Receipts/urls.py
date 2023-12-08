@@ -13,5 +13,5 @@ urlpatterns = [
     path('New-receipt/', views.add_receipt, name='add-receipt'),
     path('New-supplier/', views.add_supplier, name='add-supplier'),
     path('New-drug/', views.add_drug, name='add-drug'),
-    path('drug-autocomplete/', views.DrugAutocomplete.as_view(), name='drug-autocomplete')
+    path('product-autocomplete/', views.ProductAutocomplete.as_view(), name='product-autocomplete')
 ] 

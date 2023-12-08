@@ -30,18 +30,24 @@ class ReceiptForm(forms.ModelForm):
         model = SupplierSupply
         fields = ['supplier', 'supply_date']
 
-class DrugReceiptForm(forms.ModelForm):
+class ProductReceiptForm(forms.ModelForm):
     class Meta:
         model = SupplierSupply
-        fields = ['drug', 'quantity_added', 'cost_price', 'former_quantity']
+        fields = ['content_type', 'object_id', 'content_object', 'quantity_added', 'cost_price', 'former_quantity']
         widgets = {
-            'drug': autocomplete.Select2(
-                url='Receipts:drug-autocomplete',
+            'content_type': forms.HiddenInput(),  # Hidden input for content type
+            'object_id': forms.HiddenInput(),  # Hidden input for object ID
+            'content_object': autocomplete.ModelSelect2(
+                url='Receipts:product-autocomplete',
                 attrs={'data-minimum-input-length': 2}
-            )}
+            ),
+            'quantity_added': forms.NumberInput(),
+            'cost_price': forms.NumberInput(),
+            'former_quantity': forms.NumberInput(),
+        }
 
-DrugReceiptFormSet = forms.modelformset_factory(
+ProductReceiptFormSet = forms.modelformset_factory(
     SupplierSupply,
-    form=DrugReceiptForm,
+    form=ProductReceiptForm,
     extra=1,
 )

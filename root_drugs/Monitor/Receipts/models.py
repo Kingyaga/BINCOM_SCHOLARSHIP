@@ -1,5 +1,7 @@
 from django.db import models
 from django.core.validators import RegexValidator
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 
 # Create your models here.
 class Supplier(models.Model):
@@ -35,8 +37,11 @@ class Provision(models.Model):
 
 class SupplierSupply(models.Model):
     supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
-    drug = models.ForeignKey(Drug, on_delete=models.CASCADE)
     supply_date = models.DateField()
     quantity_added = models.IntegerField(default=0)
     cost_price = models.IntegerField(default=0)
     former_quantity = models.IntegerField(default=0)
+    # Generic Foreign Key for referencing Provision or Drug
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
