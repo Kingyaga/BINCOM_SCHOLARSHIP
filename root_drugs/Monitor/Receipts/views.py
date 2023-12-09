@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseBadRequest
 from django.contrib import messages
-from itertools import chain
 from .forms import *
 
 def index(request):
@@ -84,15 +83,15 @@ def add_drug(request):
 def add_receipt(request):
     if request.method == 'POST':
         receipt_form = ReceiptForm(request.POST)
-        product_receipt_formset = ProductReceiptFormSet(request.POST, queryset=SupplierSupply.objects.none())
+        drug_receipt_formset = DrugReceiptFormSet(request.POST, queryset=SupplierSupply.objects.none())
 
-        if receipt_form.is_valid() and product_receipt_formset.is_valid():
+        if receipt_form.is_valid() and drug_receipt_formset.is_valid():
             cleaned_data = receipt_form.cleaned_data
             supplier = cleaned_data.get('supplier')
             supply_date = cleaned_data.get('supply_date')
-            # Link each product receipt to the main receipt instance
-            product_receipt_instances = product_receipt_formset.save(commit=False)
-            for instance in product_receipt_instances:
+            # Link each drug receipt to the main receipt instance
+            drug_receipt_instances = drug_receipt_formset.save(commit=False)
+            for instance in drug_receipt_instances:
                 instance.supplier = supplier
                 instance.supply_date = supply_date
                 instance.save()
@@ -100,17 +99,16 @@ def add_receipt(request):
             return redirect('index')  # Redirect to a view showing a list of receipts
     else:
         receipt_form = ReceiptForm()
-        product_receipt_formset = ProductReceiptFormSet(queryset=SupplierSupply.objects.none())
+        drug_receipt_formset = DrugReceiptFormSet(queryset=SupplierSupply.objects.none())
 
     return render(request, 'Receipts/add-receipt.html', {
         'receipt_form': receipt_form,
-        'product_receipt_formset': product_receipt_formset
+        'drug_receipt_formset': drug_receipt_formset
     })
 
-class ProductAutocomplete(autocomplete.Select2QuerySetView):
+class DrugAutocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
-        qs_drugs = Drug.objects.filter(drug_name__icontains=self.q)[:10]
-        qs_provisions = Provision.objects.filter(product_name__icontains=self.q)[:10]
-        
-        qs_combined = list(chain(qs_drugs, qs_provisions))
-        return qs_combined
+        qs = Drug.objects.all()
+        if self.q:
+            qs = qs.filter(name__icontains=self.q)[:10] 
+        return qs
