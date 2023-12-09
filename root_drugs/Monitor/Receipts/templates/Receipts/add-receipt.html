@@ -6,7 +6,7 @@
 {% endblock  %}
 
 {% block body %}
-    <h1>Add New Receipt</h1>
+    <h1>Add Drug Receipt</h1>
         <form method="POST" action="{% url 'Receipts:add-receipt' %}">
             {% csrf_token %}
             {{ receipt_form.as_p }}
