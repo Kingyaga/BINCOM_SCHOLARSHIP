@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseBadRequest
 from django.contrib import messages
+from itertools import chain
+from django.db.models import Q
+from .util import check_model_in_models
 from .forms import *
 
 def index(request):
@@ -12,25 +15,41 @@ def supplier_list(request):
 
 def supplier_details(request, supplier_id):
     supplier = get_object_or_404(Supplier, pk=supplier_id)
-    supplier_supplies = SupplierSupply.objects.filter(supplier_id=supplier_id).order_by('-supply_date').values_list('supply_date', flat=True).distinct()
+    supplier_supplies = Receipt.objects.filter(supplier=supplier_id).order_by('-supply_date').values_list('supply_date', flat=True).distinct()
     return render(request, 'Receipts/supplier_details.html', {'supplier': supplier, 'supplier_supplies': supplier_supplies, 'supplier_id': supplier_id})
 
-def search_drug_history(request):
+def search_item_history(request):
     if 'query' in request.GET:
         query = request.GET['query']
-        # Perform case-insensitive search for drug name or generic name
-        drugs = Drug.objects.filter(models.Q(drug_name__icontains=query) | models.Q(generic_name__icontains=query))
-        return render(request, 'Receipts/drug_search_results.html', {'drugs': drugs, 'query': query})
-    return render(request, 'Receipts/search_drug_history.html')
+        # Perform case-insensitive search for drug name, generic name, provision name, and category
+        drugs = Drug.objects.filter(Q(name__icontains=query) | Q(generic_name__icontains=query))
+        provisions = Provision.objects.filter(Q(name__icontains=query) | Q(category__icontains=query))
+        
+        # Merge the querysets of drugs and provisions into a single queryset
+        results = list(chain(drugs, provisions))
+        return render(request, 'Receipts/item_search_results.html', {'results': results, 'query': query})
+    return render(request, 'Receipts/search_item_history.html')
 
-def drug_details(request, drug_id):
-    drug = get_object_or_404(Drug, pk=drug_id)
-    supplies = SupplierSupply.objects.filter(drug=drug)
-    return render(request, 'Receipts/drug_details.html', {'drug': drug, 'supplies': supplies})
+def item_details(request, item_type, item_id):
+    if check_model_in_models(item_type):
+        item = get_object_or_404(f"{item_type}", pk=item_id)
+    else:
+        # Handle invalid item type
+        return HttpResponseBadRequest("Invalid item type")
+    # Define a Q object to conditionally filter by drug_id or provision_id
+    filter_condition = Q()
+    if item_type == "Drug":
+        filter_condition |= Q(items__item__drug_id=item_id)
+    else:
+        filter_condition |= Q(items__item__provision_id=item_id)
+    # Query to get receipt details based on item_type (drug or provision)
+    receipts = Receipt.objects.filter(filter_condition)
+    return render(request, 'Receipts/item_details.html', {'item': item, 'type': item_type, 'receipts': receipts})
 
-def Receipt_details(request, supply_id):
-    supply = get_object_or_404(SupplierSupply, pk=supply_id)
-    return render(request, 'Receipts/Receipt_details.html', {'supply': supply})
+def Receipt_details(request, type, item_id, receipt_id):
+    receipt = get_object_or_404(Receipt, pk=receipt_id)
+    item = receipt.items.filter(pk=item_id).first()
+    return render(request, 'Receipts/Receipt_details.html', {'receipt': receipt, 'item': item, 'type': type})
 
 def receipt(request, supplier_id):
     if request.method == 'GET':
@@ -39,7 +58,7 @@ def receipt(request, supplier_id):
             messages.error(request, 'Supply date is missing.')
             return HttpResponseBadRequest('Supply date is missing.')
         supplier = get_object_or_404(Supplier, pk=supplier_id)
-        supplies = SupplierSupply.objects.filter(supplier=supplier, supply_date=supply_date)
+        supplies = Receipt.objects.filter(supplier=supplier_id, supply_date=supply_date)
         return render(request, 'Receipts/receipt.html', {'supplier': supplier, 'supplies': supplies, 'supply_date': supply_date})
     else:
         return HttpResponseBadRequest('Invalid request method.')
@@ -66,44 +85,64 @@ def add_drug(request):
     if request.method == 'POST':
         form = DrugForm(request.POST)
         if form.is_valid():
-            drug_name = form.cleaned_data['drug_name']
+            drug_name = form.cleaned_data['name']
             # Check if a drug with the same name already exists
-            existing_drug = Drug.objects.filter(drug_name__iexact=drug_name).first()
+            existing_drug = Drug.objects.filter(name__iexact=drug_name).first()
             if existing_drug:
                 # If the drug already exists, redirect to a view or page showing the existing drug details
-                return redirect('drug-details', drug_id=existing_drug.id)
+                return redirect('item-details', item_type="Drug", item_id=existing_drug.id)
             else:
                 # If the drug does not exist, save the new drug
                 form.save()
-                return redirect('drug-details', drug_id=existing_drug.id)  # Redirect to a view showing the drug details
+                return redirect('item-details', item_type="Drug", item_id=existing_drug.id)  # Redirect to a view showing the drug details
     else:
         form = DrugForm()
     return render(request, 'Receipts/add-drug.html', {'form': form})
 
+def add_provision(request):
+    if request.method == 'POST':
+        form = ProvisionForm(request.POST)
+        if form.is_valid():
+            provision_name = form.cleaned_data['name']
+            # Check if a provision with the same name already exists
+            existing_provision = Provision.objects.filter(provision_name__iexact=provision_name).first()
+            if existing_provision:
+                # If the provision already exists, redirect to a view or page showing the existing provision details
+                return redirect('item-details', item_type="Provision", item_id=existing_provision.id)
+            else:
+                # If the provision does not exist, save the new provision
+                form.save()
+                return redirect('item-details', item_type="Provision", item_id=existing_provision.id)  # Redirect to a view showing the provision details
+    else:
+        form = ProvisionForm()
+    return render(request, 'Receipts/add-provision.html', {'form': form})
+
+
 def add_receipt(request):
     if request.method == 'POST':
         receipt_form = ReceiptForm(request.POST)
-        drug_receipt_formset = DrugReceiptFormSet(request.POST, queryset=SupplierSupply.objects.none())
+        receipt_item_formset = ReceiptItemFormSet(request.POST, queryset=ReceiptItem.objects.none())
 
-        if receipt_form.is_valid() and drug_receipt_formset.is_valid():
-            cleaned_data = receipt_form.cleaned_data
-            supplier = cleaned_data.get('supplier')
-            supply_date = cleaned_data.get('supply_date')
-            # Link each drug receipt to the main receipt instance
-            drug_receipt_instances = drug_receipt_formset.save(commit=False)
-            for instance in drug_receipt_instances:
-                instance.supplier = supplier
-                instance.supply_date = supply_date
-                instance.save()
+        if receipt_form.is_valid() and receipt_item_formset.is_valid():
+            # Save receipt form data
+            receipt = receipt_form.save()
+
+            # Link each item receipt to the main receipt instance
+            for form in receipt_item_formset.cleaned_data:
+                item = form.get('item')
+                quantity_added = form.get('quantity_added')
+                cost_price = form.get('cost_price')
+                former_quantity = form.get('former_quantity')
+                ReceiptItem.objects.create(receipt=receipt, item=item, quantity_added=quantity_added, cost_price=cost_price, former_quantity=former_quantity)
 
             return redirect('index')  # Redirect to a view showing a list of receipts
     else:
         receipt_form = ReceiptForm()
-        drug_receipt_formset = DrugReceiptFormSet(queryset=SupplierSupply.objects.none())
+        receipt_item_formset = ReceiptItemFormSet(queryset=ReceiptItem.objects.none())
 
     return render(request, 'Receipts/add-receipt.html', {
         'receipt_form': receipt_form,
-        'drug_receipt_formset': drug_receipt_formset
+        'receipt_item_formset': receipt_item_formset
     })
 
 class DrugAutocomplete(autocomplete.Select2QuerySetView):

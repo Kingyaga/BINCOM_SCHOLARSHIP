@@ -7,7 +7,9 @@
 {% block body %}
     <h1>Supplier Details</h1>
     <h3>Supplier Name: {{ supplier.supplier_name }}</h3>
-    <p>Contact Information: {{ supplier.contact_info }}</p>
+    <p>Address: {{ supplier.address }}</p>
+    <p>Email: {{ supplier.email }}</p>
+    <p>Phone Number: {{ supplier.phone_number }}</p>
     <h1>Select a Receipt</h1>
     <form method="GET" action="{% url 'Receipts:receipt' supplier_id=supplier_id %}">
         <select name="supply_date">

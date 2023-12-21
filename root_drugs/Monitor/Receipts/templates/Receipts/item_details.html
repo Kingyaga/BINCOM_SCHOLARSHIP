@@ -1,0 +1,29 @@
+{% extends "Receipts/layout.html" %}
+
+{% block title %}
+    {{type}} Details
+{% endblock %}
+
+{% block body %}
+    {% if item %}
+        <h1>{{type}} Details</h1>
+        <h3>{{type}} Name: {{ item.name }}</h3>>
+        {% if type == "Drug" %}
+            <h3>Generic Name: {{ item.generic_name }}</h3>
+        {% else %}
+            <h3>Category: {{ item.category }}</h3>
+        {% endif %}
+        <h2>Receipt History:</h2>
+        <ul>
+            {% for receipt in receipts %}
+                <li>
+                    <a href="{% url 'Receipts:Receipt_details' type=type item_id=item.id receipt_id=receipt.id %}">{{ receipt.supplier.supplier_name }} - {{ receipt.supply_date }}</a>
+                </li>
+            {% empty %}
+                <li>No Receipt history available for this {{type}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h1>{{type}} does not exist</h1>
+    {% endif %}
+{% endblock %}

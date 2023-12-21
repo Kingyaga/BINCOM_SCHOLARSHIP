@@ -20,23 +20,36 @@ class Supplier(models.Model):
         return self.supplier_name
     
 class Drug(models.Model):
-    drug_name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
     generic_name = models.CharField(max_length=200)
 
     def __str__(self):
         return self.drug_name
     
+    def get_model_name(self):
+        return 'Drug'
+    
 class Provision(models.Model):
-    product_name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
     category = models.CharField(max_length=200)
 
     def __str__(self):
         return self.product_name
-
-class SupplierSupply(models.Model):
-    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
+    
+    def get_model_name(self):
+        return 'Provision'  
+    
+class Item(models.Model):
     drug = models.ForeignKey(Drug, on_delete=models.CASCADE)
+    provision = models.ForeignKey(Provision, on_delete=models.CASCADE)
+
+class Receipt(models.Model):
+    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
     supply_date = models.DateField()
+
+class ReceiptItem(models.Model):
+    receipt = models.ForeignKey(Receipt, on_delete=models.CASCADE)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
     quantity_added = models.IntegerField(default=0)
     cost_price = models.IntegerField(default=0)
     former_quantity = models.IntegerField(default=0)

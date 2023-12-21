@@ -5,10 +5,16 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Receipt Details</h1>
-    <h2>Receipt: {{ supply.supplier.supplier_name }} - {{ supply.supply_date }}</h2>
-    <h2>Drug Name: {{ supply.drug.drug_name }}</h2>
-    <p>Cost Price: {{ supply.cost_price }}</p>
-    <p>Quantity Added: {{ supply.quantity_supplied }}</p>
-    <p>Former Quantity: {{ supply.initial_quantity }}</p>
+    {% if item %}
+        <h1>Receipt Details</h1>
+        <h2>Receipt: {{ receipt.supplier.supplier_name }} - {{ receipt.supply_date }}</h2>
+        {% with object_attr=type %}
+            <h3>{{ type }} Name: {{ getattr(object_attr, 'name', '') }}</h3>
+        {% endwith %}
+        <p>Cost Price: {{ receipt.cost_price }}</p>
+        <p>Quantity Added: {{ receipt.quantity_added }}</p>
+        <p>Former Quantity: {{ receipt.former_quantity }}</p>
+    {% else %}
+        <h1>Receipt does not exist</h1>
+    {% endif %}
 {% endblock %}

@@ -20,28 +20,33 @@ class SupplierForm(forms.ModelForm):
 class DrugForm(forms.ModelForm):
     class Meta:
         model = Drug
-        fields = ['drug_name', 'generic_name']
+        fields = ['name', 'generic_name']
+
+class ProvisionForm(forms.ModelForm):
+    class Meta:
+        model = Provision
+        fields = ['name', 'category']
 
 class ReceiptForm(forms.ModelForm):
     supplier = forms.ModelChoiceField(queryset=Supplier.objects.all(), empty_label="Select Supplier")
     supply_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
     
     class Meta:
-        model = SupplierSupply
+        model = Receipt
         fields = ['supplier', 'supply_date']
 
-class DrugReceiptForm(forms.ModelForm):
+class ReceiptItemForm(forms.ModelForm):
     class Meta:
-        model = SupplierSupply
-        fields = ['drug', 'quantity_added', 'cost_price', 'former_quantity']
+        model = ReceiptItem
+        fields = ['item', 'quantity_added', 'cost_price', 'former_quantity']
         widgets = {
-            'drug': autocomplete.Select2(
-                url='Receipts:drug-autocomplete',
+            'item': autocomplete.Select2(
+                url='Receipts:autocomplete',
                 attrs={'data-minimum-input-length': 2}
             )}
 
-DrugReceiptFormSet = forms.modelformset_factory(
-    SupplierSupply,
-    form=DrugReceiptForm,
+ReceiptItemFormSet = forms.modelformset_factory(
+    ReceiptItem,
+    form=ReceiptItemForm,
     extra=1,
 )
